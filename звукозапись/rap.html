@@ -1,0 +1,34 @@
+<script src='hashtable.js'></script>
+
+<style>
+
+    .base
+    {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-image: url('small_mitya.jpg');
+        background-repeat: repeat;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    .formView
+    {
+        height:50%; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
+
+
+    <div class = "base">
+        <form method = get action="hashtable.js" class = "formView">
+            <input onclick = "AddValue(prompt('Введите инструмент'), prompt('Введите описание инструмента'));" value = "Добавьте информацию об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "DeleteValue(prompt('Введите инструмент'));" value = "Удаление информации об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "var value = GetValueInfo(prompt('Введите инструмент')); alert(value);console.log(value);" value = "Получение информации об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "var res = ListValues(); alert(res); console.log(res);" value = "Перечень всех инструментов" type ="button", style = "height: 75px;">
+        </form>
+    </div>
