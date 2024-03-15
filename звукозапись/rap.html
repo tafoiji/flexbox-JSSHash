@@ -26,9 +26,9 @@
 
     <div class = "base">
         <form method = get action="hashtable.js" class = "formView">
-            <input onclick = "AddValue(prompt('Введите инструмент'), prompt('Введите описание инструмента'));" value = "Добавьте информацию об инструменте" type ="button", style = "height: 75px;">
-            <input onclick = "DeleteValue(prompt('Введите инструмент'));" value = "Удаление информации об инструменте" type ="button", style = "height: 75px;">
-            <input onclick = "var value = GetValueInfo(prompt('Введите инструмент')); alert(value);console.log(value);" value = "Получение информации об инструменте" type ="button", style = "height: 75px;">
-            <input onclick = "var res = ListValues(); alert(res); console.log(res);" value = "Перечень всех инструментов" type ="button", style = "height: 75px;">
+            <input onclick = "Storage.AddValue(prompt('Введите инструмент'), prompt('Введите описание инструмента'));" value = "Добавьте информацию об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "Storage.DeleteValue(prompt('Введите инструмент'));" value = "Удаление информации об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "var value = Storage.GetValue(prompt('Введите инструмент')); alert(value);console.log(value);" value = "Получение информации об инструменте" type ="button", style = "height: 75px;">
+            <input onclick = "var res = Storage.GetKeys(); alert(res); console.log(res);" value = "Перечень всех инструментов" type ="button", style = "height: 75px;">
         </form>
     </div>

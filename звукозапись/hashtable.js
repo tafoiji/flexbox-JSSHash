@@ -1,48 +1,63 @@
-var hashTable = new Object();
-// звукозапись: ключ - инструмент, значение - описание
-
-function AddValue(key, value)
+class THashStorage
 {
-    if (key === null)
+    #hashTable
+    constructor()
     {
-        return;
+        this.#hashTable = new Object();
     }
 
-    hashTable[key] = value;
-}
-
-function DeleteValue(key)
-{
-    if (key === null)
+    Reset()
     {
-        return;
+        for (key in this.#hashTable)
+        {
+            this.DeleteValue(key);
+        }
+
+        this.#hashTable = new Object();
     }
 
-    delete hashTable[key];
-}
-
-function GetValueInfo(key)
-{
-    if (key in hashTable)
+    AddValue(key, value)
     {
-        return hashTable[key];
+        if (key === null)
+        {
+            alert("key is empty");
+            console.log("key is empty");
+        }
+
+        this.#hashTable[key] = value;
     }
+
+    DeleteValue(key)
+    {
+        if (key === null)
+        {
+            alert("key is empty");
+            console.log("key is empty");
+        }
+
+        delete this.#hashTable[key];
+    }
+
+    GetValue(key)
+    {
+        if (key in this.#hashTable)
+        {
+            return this.#hashTable[key];
+        }
     
-    return "No Informaiton";
-}
-
-function ListValues()
-{
-    var res = "";
-    for (var pair in hashTable)
-    {
-        res+=pair.toString() + ' ' + hashTable[pair].toString() + '\n';
+        return undefined;
     }
 
-    if (res === "")
+    GetKeys()
     {
-        return "No Information";
-    }
+        var res = [];
+        for (var pair in this.#hashTable)
+        {
+            res.push(pair);
+        }
 
-    return res;
+        return res;
+    }
 }
+
+var Storage = new THashStorage();
